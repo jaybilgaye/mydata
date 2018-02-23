@@ -1,0 +1,11 @@
+#!/bin/sh
+for i in `more userlist.txt `
+do
+echo $i
+useradd -g development $i
+echo "user Has been Added"
+sudo -u hdfs hadoop fs -mkdir -p /user/$i
+sudo -u hdfs hadoop fs -chown -R $i:development /user/$i
+hdfs dfs -ls /user/$i
+
+done
