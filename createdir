@@ -1,4 +1,5 @@
 #!/bin/sh
+groupadd development
 for i in `more userlist.txt `
 do
 echo $i
